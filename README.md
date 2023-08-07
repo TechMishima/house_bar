@@ -1,24 +1,67 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| nickname           | string | null: false               |
+| bar                | string | null: false               |
+| bio                | text   | null: false               |
+※アイコン画像はActiveStorageで追加（任意）
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :cocktails
+- has_many :Likes
 
-* Configuration
+- follow
+has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+has_many :followings, through: :active_relationships, source: :follower
+has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+has_many :followers, through: :passive_relationships, source: :following
 
-* Database creation
+## cocktails テーブル
 
-* Database initialization
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| name        | string     | null: false                    |
+| description | text       |                                |
+| base_id     | integer    | null: false                    |
+| type_id     | integer    | null: false                    |
+| Ingredient  | text       |                                |
+| tool        | text       |                                |
+| recipe      | text       |                                |
+| user        | references | null: false, foreign_key: true |
+※カクテル画像はActiveStorageで追加（任意）
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- has_many :likes
 
-* Deployment instructions
+## likes テーブル
 
-* ...
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| cocktail | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :cocktail
+
+## relationships テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| following | references | null: false, foreign_key: true |
+| follower  | references | null: false, foreign_key: true |
+
+### Association
+
+- follow
+belongs_to :following, class_name: "User"
+belongs_to :follower, class_name: "User"
