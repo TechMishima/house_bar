@@ -51,6 +51,6 @@
   color: white;
 }
 
-.login:hover,.sign-up:hover {
+.login:hover,.sign-up:hover,.logout:hover {
   background: darkorange;
 }
