@@ -30,7 +30,7 @@ has_many :followers, through: :passive_relationships, source: :following
 | description | text       |                                |
 | base_id     | integer    | null: false                    |
 | type_id     | integer    | null: false                    |
-| Ingredient  | text       |                                |
+| ingredient  | text       |                                |
 | tool        | text       |                                |
 | recipe      | text       |                                |
 | user        | references | null: false, foreign_key: true |
