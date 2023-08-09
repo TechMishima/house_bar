@@ -7,7 +7,6 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
-| bar                | string | null: false               |
 | bio                | text   | null: false               |
 ※アイコン画像はActiveStorageで追加（任意）
 
