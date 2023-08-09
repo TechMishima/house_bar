@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 1vh 5vw;
+  background-color: white;
+  border: 1px solid orange;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iebar-wide {
+  width: 10vw;
+  margin-right: vw;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh 0;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: orange;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login,.sign-up,.logout{
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 30px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: orange;
+  font-weight: bold;
+  color: white;
+}
+
+.login:hover,.sign-up:hover,.logout:hover {
+  background: darkorange;
+}
