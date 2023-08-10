@@ -19,7 +19,9 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :description, :base_id, :type_id, :ingredient, :tool, :recipe, :image)
+    params.require(:cocktail)
+    .permit(:name, :description, :base_id, :type_id, :ingredient,:tool, :recipe, :image)
+    .merge(user_id: current_user.id)
   end
 
 end
