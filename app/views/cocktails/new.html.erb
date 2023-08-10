@@ -1,0 +1,52 @@
+<div class="box3">
+  <div class="box-inner">
+    <%= form_with model: @cocktail, url: cocktails_path, class: 'new_cocktail', local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <h1>カクテル新規投稿</h1>
+    <div class="box-name">
+      <%= f.label :name, "名前" %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="box-image">
+      <%= f.label :image, "画像" %><br />
+      <%= f.file_field :image, autofocus: true %>
+    </div>
+
+    <div class="box-base">
+    <%= f.label :base, "ベース" %><br />
+    <%= f.collection_select(:base_id, AlcoholBase.all, :id, :name, {}, {class:"base-select"}) %>
+    </div>
+
+    <div class="box-type">
+    <%= f.label :type, "種類" %><br />
+    <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"type-select"}) %>
+    </div>
+
+    <div class="box-ingredient">
+      <%= f.label :ingredient, "材料" %><br />
+      <%= f.text_area :ingredient, autofocus: true %>
+    </div>
+
+    <div class="box-tool">
+      <%= f.label :tool, "道具" %><br />
+      <%= f.text_area :tool, autofocus: true %>
+    </div>
+
+    <div class="box-description">
+      <%= f.label :description, "説明" %><br />
+      <%= f.text_area :description, autofocus: true %>
+    </div>
+
+    <div class="box-recipe">
+      <%= f.label :recipe, "レシピ" %><br />
+      <%= f.text_area :recipe, autofocus: true %>
+    </div>
+
+    <div class="box-send">
+      <%= f.submit "SEND" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
