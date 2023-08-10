@@ -4,6 +4,10 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.order(created_at: :desc).limit(4)
   end
 
+  def show
+    @cocktail = Cocktail.find(params[:id])
+  end
+
   def new
     @cocktail = Cocktail.new
   end
