@@ -11,7 +11,7 @@
 <div class="cocktail-index">
 <% @cocktails.each do |cocktail| %>
   <div class="cocktail-index-box">
-    <%= link_to "/" do %>
+    <%= link_to cocktail_path(cocktail.id) do %>
     <div class="cocktail-index-name"><%= cocktail.name %></div>
     <div class="cocktail-index-tab">
       <div class="cocktail-index-base">Base : <%= cocktail.base.name %></div>
