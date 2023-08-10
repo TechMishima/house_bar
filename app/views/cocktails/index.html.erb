@@ -2,3 +2,23 @@
 <%= link_to "ログイン", new_user_session_path, class: "post" %>
 <%= link_to "新規登録", new_user_registration_path, class: "post" %>
 <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+
+<div>
+  <%= link_to 'カクテルを作成する', new_cocktail_path %>
+</div>
+
+<%# カクテル一覧 %>
+<div class="cocktail-index">
+<% @cocktails.each do |cocktail| %>
+  <div class="cocktail-index-box">
+    <%= link_to "/" do %>
+    <div class="cocktail-index-name"><%= cocktail.name %></div>
+    <div class="cocktail-index-tab">
+      <div class="cocktail-index-base">Base : <%= cocktail.base.name %></div>
+      <div class="cocktail-index-type">Style : <%= cocktail.type.name %></div>
+    </div>
+    <%= image_tag cocktail.image, class: "cocktail-index-img" %>
+    <% end %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,90 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.box3 {
+  width: 50vw ;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background-color: white;
+}
+
+.box3 h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  color: orange;
+}
+
+.box-name label, .box-image label, .box-image label, .box-base label, 
+.box-type label, .box-description label, .box-ingredient label, 
+.box-tool label, .box-recipe label{
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  color: orange;
+}
+
+.box-inner {
+  padding: 20px 26px;
+}
+
+.box-name , .box-image , .box-image , .box-base , 
+.box-type , .box-description , .box-ingredient , 
+.box-tool , .box-recipe  {
+  margin-bottom: 13px;
+}
+
+.box-name input{
+  font-size: 20px;
+  width: 600px;
+  padding: 2px;
+}
+
+.box-base select, .box-type select{
+  width: 250px;
+  padding: 2px;
+  font-size: 18px;
+}
+
+.box-ingredient textarea, .box-tool textarea {
+  width: 45vw;
+  padding: 2px;
+  font-size: 18px;
+  height: 100px;
+}
+
+.box-description textarea, .box-recipe textarea{
+  width: 45vw;
+  padding: 2px;
+  font-size: 18px;
+  height: 200px;
+}
+
+.box-send {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.box-send input[type="submit"] {
+  border-style: none;
+  width: 200px;
+  height: 50px;
+  background: orange;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.box-send input[type="submit"]:hover {
+  cursor: pointer;
+  background: darkorange;
+}

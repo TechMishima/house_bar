@@ -7,7 +7,6 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
-| bar                | string | null: false               |
 | bio                | text   | null: false               |
 ※アイコン画像はActiveStorageで追加（任意）
 
@@ -30,7 +29,7 @@ has_many :followers, through: :passive_relationships, source: :following
 | description | text       |                                |
 | base_id     | integer    | null: false                    |
 | type_id     | integer    | null: false                    |
-| Ingredient  | text       |                                |
+| ingredient  | text       |                                |
 | tool        | text       |                                |
 | recipe      | text       |                                |
 | user        | references | null: false, foreign_key: true |
