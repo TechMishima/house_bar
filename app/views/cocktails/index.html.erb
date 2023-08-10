@@ -8,8 +8,9 @@
 </div>
 
 <%# カクテル一覧 %>
+<div class="cocktail-index">
 <% @cocktails.each do |cocktail| %>
-  <div class="cocktail-index">
+  <div class="cocktail-index-box">
     <%= link_to "/" do %>
     <div class="cocktail-index-name"><%= cocktail.name %></div>
     <div class="cocktail-index-tab">
@@ -20,3 +21,4 @@
     <% end %>
   </div>
 <% end %>
+</div>

@@ -1,0 +1,42 @@
+.cocktail-index {
+  width: 100vw;
+  padding: 0px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.cocktail-index-box {
+  height: 500px;
+  width: 500px;
+  background-color: white;
+  border: 2px solid orange;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0px 20px;
+  padding: 5px;
+}
+
+.cocktail-index-name {
+  font-size: 24px;
+  color: orange;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cocktail-index-tab {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.cocktail-index-base, .cocktail-index-type {
+  font-size: 20px;
+  color: orange;
+  font-weight: bold;
+}
+
+.cocktail-index-img {
+  height: 400px;
+  width: 400px;
+}
