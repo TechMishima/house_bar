@@ -14,7 +14,7 @@
     <%= link_to cocktail_path(cocktail.id) do %>
     <div class="cocktail-index-name"><%= cocktail.name %></div>
     <div class="cocktail-index-tab">
-      <div class="cocktail-index-base">Base : <%= cocktail.base.name %></div>
+      <div class="cocktail-index-alcohol">Alcohol : <%= cocktail.alcohol.name %></div>
       <div class="cocktail-index-type">Style : <%= cocktail.type.name %></div>
     </div>
     <%= image_tag cocktail.image, class: "cocktail-index-img" %>
@@ -22,3 +22,8 @@
   </div>
 <% end %>
 </div>
+
+<%# 作成ボタン %>
+<%= link_to(new_cocktail_path, class: 'make-btn') do %>
+  <%= image_tag 'make-btn.png' , size: '150x150' ,class: "make-btn-icon" %>
+<% end %>
