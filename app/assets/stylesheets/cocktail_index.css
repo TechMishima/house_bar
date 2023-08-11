@@ -39,4 +39,5 @@
 .cocktail-index-img {
   height: 400px;
   width: 400px;
+  object-fit: contain;
 }
