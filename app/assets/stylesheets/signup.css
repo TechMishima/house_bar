@@ -4,57 +4,76 @@
   text-decoration: none;
 }
 
-.box1 {
+.user-new {
   width: 350px;
   height: 600px;
   margin: 60px auto 0;
   border-radius: 4px;
-  border: 1px #ddd solid;
+  border: 2px orange solid;
   background-color: white;
 }
 
-.box2 {
+.user-login {
   width: 350px;
   height: 450px;
   margin: 60px auto 0;
   border-radius: 4px;
-  border: 1px #ddd solid;
-  background-color: white
+  border: 2px orange solid;
+  background-color: white;
+}
+
+.user-edit {
+  width: 500px;
+  height: 1100px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 2px orange solid;
+  background-color: white;
 }
 
 .box-inner {
   padding: 20px 26px;
 }
 
-h1 {
-  font-weight: 400;
+.user-new h1 ,.user-login h1, .user-edit h1{
+  font-weight: bold;
   font-size: 28px;
   line-height: 1.2;
   margin-bottom: 10px;
   padding-bottom: 4px;
-  color: #111111;
+  color: orange;
+  text-align: center;
 }
 
-.box-nickname {
+.new-nickname, .edit-nickname{
   margin-bottom: 13px;
 }
 
-.box-email {
+.new-email, .login-email, .edit-email{
   margin-bottom: 13px;
 }
 
-.box-password {
+.edit-img, .edit-bio{
+  margin-bottom: 13px;
+}
+
+.new-password, .login-password, .edit-password{
   margin-bottom: 22px;
 }
 
-.box-nickname label, .box-email label, .box-password label {
+.new-nickname label, .new-email label, .new-password label , .edit-password label,
+.edit-nickname label, .login-email label, .login-password label, .edit-email label,
+.edit-img label, .edit-bio label{
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   padding-left: 2px;
   padding-bottom: 2px;
+  color: orange;
 }
 
-.box-nickname input[type="text"], .box-email input[type="email"], .box-password input[type="password"] {
+.new-nickname input[type="text"], .new-email input[type="email"], .new-password input[type="password"] ,
+.edit-nickname input[type="text"], .login-email input[type="email"], .login-password input[type="password"],
+.edit-email input[type="email"], .edit-password input[type="password"]{
   border-style: none;
   box-sizing: border-box;
   width: 100%;
@@ -65,34 +84,37 @@ h1 {
   padding: 0 7px;
 }
 
-.column-left {
-  float: left;
+.edit-bio textarea {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 5px 7px;
 }
 
-.column-right {
-  float: right;
-}
-
-.box-password a {
+.new-password a ,.login-password a, .edit-password a{
   font-size: 13px;
 }
 
-.box-login {
+.new-login, .login-send{
   margin-bottom: 26px;
 }
 
-.box-login input[type="submit"] {
-  border-style: none;
+.new-login input[type="submit"], .login-send input[type="submit"], .edit-login input[type="submit"]{
+  background-color: orange;
+  border: 1px solid darkorange;
+  border-radius: 3px;
   width: 100%;
   height: 31px;
-  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
-  border-radius: 3px;
-  border: 1px #a88734 solid;
+  color: white;
 }
 
-.box-login input[type="submit"]:hover {
+.new-login input[type="submit"]:hover, .login-send input[type="submit"]:hover, .edit-login input[type="submit"]:hover{
   cursor: pointer;
-  background: #f0c14b;
+  background: darkorange;
 }
 
 .remember {
