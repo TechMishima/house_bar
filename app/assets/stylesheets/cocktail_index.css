@@ -30,7 +30,7 @@
   margin-bottom: 5px;
 }
 
-.cocktail-index-base, .cocktail-index-type {
+.cocktail-index-alcohol, .cocktail-index-type {
   font-size: 20px;
   color: orange;
   font-weight: bold;
@@ -39,5 +39,13 @@
 .cocktail-index-img {
   height: 400px;
   width: 400px;
+}
+
+.make-btn-icon {
+  border-radius: 10%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  border: 10px solid darkorange;
   object-fit: contain;
 }

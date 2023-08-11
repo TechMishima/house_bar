@@ -22,7 +22,7 @@
   color: orange;
 }
 
-.box-name label, .box-image label, .box-image label, .box-base label, 
+.box-name label, .box-image label, .box-image label, .box-alcohol label, 
 .box-type label, .box-description label, .box-ingredient label, 
 .box-tool label, .box-recipe label{
   font-weight: bold;
@@ -36,7 +36,7 @@
   padding: 20px 26px;
 }
 
-.box-name , .box-image , .box-image , .box-base , 
+.box-name , .box-image , .box-image , .box-alcohol , 
 .box-type , .box-description , .box-ingredient , 
 .box-tool , .box-recipe  {
   margin-bottom: 13px;
@@ -48,7 +48,7 @@
   padding: 2px;
 }
 
-.box-base select, .box-type select{
+.box-alcohol select, .box-type select{
   width: 250px;
   padding: 2px;
   font-size: 18px;

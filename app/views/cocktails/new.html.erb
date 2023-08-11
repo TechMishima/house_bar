@@ -13,9 +13,9 @@
       <%= f.file_field :image, autofocus: true %>
     </div>
 
-    <div class="box-base">
-    <%= f.label :base, "ベース" %><br />
-    <%= f.collection_select(:base_id, AlcoholBase.all, :id, :name, {}, {class:"base-select"}) %>
+    <div class="box-alcohol">
+    <%= f.label :alcohol, "ベース" %><br />
+    <%= f.collection_select(:alcohol_id, Alcohol.all, :id, :name, {}, {class:"alcohol-select"}) %>
     </div>
 
     <div class="box-type">
