@@ -21,6 +21,14 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    cocktail = Cocktail.find(params[:id])
+    if user_signed_in? && current_user.id == cocktail.user_id
+      cocktail.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def cocktail_params

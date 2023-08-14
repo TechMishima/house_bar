@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root to: 'cocktails#index'
 
   resources :users, only: [:show]
-  resources :cocktails, only: [:index, :new, :create, :show]
+  resources :cocktails
 end
