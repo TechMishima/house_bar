@@ -1,0 +1,29 @@
+<%# プロフィール欄 %>
+<h1 class="user-show-h1">プロフィール</h1>
+<div class="user-show">
+<div class="user-show-box">
+  <div class="user-show-img-box">
+  <%= image_tag @user.image, class: "user-show-img" %>
+  </div>
+  <div class="user-show-name">Nickname : <%= @user.nickname %></div>
+  <h2 class="user-show-h2">自己紹介</h2>
+  <div class="user-show-bio"><%= @user.bio %></div>
+</div>
+</div>
+
+<%# カクテル一覧 %>
+<h1 class="user-show-h1"><%= @user.nickname %>さんのカクテル</h1>
+<div class="cocktail-index">
+<% @cocktails.each do |cocktail| %>
+  <div class="cocktail-index-box">
+    <%= link_to cocktail_path(cocktail.id) do %>
+    <div class="cocktail-index-name"><%= cocktail.name %></div>
+    <div class="cocktail-index-tab">
+      <div class="cocktail-index-alcohol">Base : <%= cocktail.alcohol.name %></div>
+      <div class="cocktail-index-type">Style : <%= cocktail.type.name %></div>
+    </div>
+    <%= image_tag cocktail.image, class: "cocktail-index-img" %>
+    <% end %>
+  </div>
+<% end %>
+</div>
