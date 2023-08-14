@@ -1,3 +1,36 @@
+.index-poster {
+  width: 100vw;
+  height: 40vh;
+  margin: 70px 0;
+  position: relative;
+}
+
+.index-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.index-poster-str {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  position: absolute;
+}
+
+.index-poster-str h1 {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 4vh;
+}
+
+.index-poster-str p {
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 2vh;
+}
+
 .cocktail-index {
   width: 100vw;
   padding: 0px 50px;
