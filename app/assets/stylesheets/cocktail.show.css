@@ -1,3 +1,30 @@
+.cocktail-show-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-top: 50px;
+}
+
+.cocktail-show-edit-btn a,.cocktail-show-del-btn a {
+  text-decoration: none;
+  margin: 0 2vw;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: orange;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+.cocktail-show-edit-btn :hover {
+  background-color: darkorange;
+}
+
+.cocktail-show-del-btn :hover {
+  background-color: red;
+}
+
 .cocktail-show {
   width: 100vw;
   padding: 0px 50px;
