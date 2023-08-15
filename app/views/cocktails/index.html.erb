@@ -22,7 +22,38 @@
   </div>
 </div>
 
+<%# 検索部分 %>
+<h1 class="index-search-h1">カクテルを探す</h1>
+
+<div class="index-search">
+  <div class="index-search-btn">
+    <%= image_tag "base-before.png", class: "search-before-img", id: "base-before-btn" %>
+    <%= image_tag "base-after.png", class: "search-after-img", id: "base-after-btn" %>
+  </div>
+
+  <div class="index-search-btn">
+    <%= image_tag "soda-before.png", class: "search-before-img", id: "soda-before-btn" %>
+    <%= image_tag "soda-after.png", class: "search-after-img", id: "soda-after-btn" %>
+  </div>
+
+  <div class="index-search-btn">
+    <%= link_to "#" do %>
+    <%= image_tag "follow-before.png", class: "search-before-img", id: "follow-before-btn" %>
+    <%= image_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
+    <% end %>
+  </div>
+
+  <div class="index-search-btn">
+    <%= link_to "#" do %>
+    <%= image_tag "favorite-before.png", class: "search-before-img", id: "favorite-before-btn" %>
+    <%= image_tag "favorite-after.png", class: "search-after-img", id: "favorite-after-btn" %>
+    <% end %>
+  </div>
+</div>
+
 <%# カクテル一覧 %>
+<h1 class="index-cocktail-h1">新規投稿カクテル</h1>
+
 <div class="cocktail-index">
 <% @cocktails.each do |cocktail| %>
   <div class="cocktail-index-box">
