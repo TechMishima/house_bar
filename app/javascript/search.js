@@ -38,6 +38,25 @@ function search() {
     favoriteBefore.removeAttribute("style")
   })
 
+  // モーダルウィンドウ
+  const overlay = document.getElementById("modal-overlay")
+  const baseSearch = document.getElementById("modal-search1")
+  const sodaSearch = document.getElementById("modal-search2")
+
+  baseAfter.addEventListener('click', function(){
+    overlay.setAttribute("style", "display:block;")
+    baseSearch.setAttribute("style", "display:block;")
+  })
+  sodaAfter.addEventListener('click', function(){
+    overlay.setAttribute("style", "display:block;")
+    sodaSearch.setAttribute("style", "display:block;")
+  })
+  overlay.addEventListener('click', function(){
+    overlay.removeAttribute("style")
+    baseSearch.removeAttribute("style")
+    sodaSearch.removeAttribute("style")
+  })
+
 }
 
 window.addEventListener('load', search)

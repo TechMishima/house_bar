@@ -51,6 +51,37 @@
   </div>
 </div>
 
+<%# モーダルウィンドウ %>
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<div class="modal-search1" id="modal-search1">
+  <h1 class="modal-h1">ベースを選択してください</h1>
+  <div class="modal-base">
+    <%= form_with(url: search_cocktails_path, local: true, method: :get, class: "search-form") do |cocktail| %>
+      <div class="modal-search-base">
+        <%= cocktail.collection_select(:alcohol_id, Alcohol.all, :id, :name, {}) %>
+      </div>
+      <div class="modal-send">
+        <%= cocktail.submit "Search" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal-search2" id="modal-search2">
+  <h1 class="modal-h1">割り材料を入力してください</h1>
+  <div class="modal-soda">
+    <%= form_with(url: search_cocktails_path, local: true, method: :get, class: "search-form") do |cocktail| %>
+      <div class="modal-search-soda">
+        <%= cocktail.text_field :ingredient %>
+      </div>
+      <div class="modal-send">
+        <%= cocktail.submit "Search" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <%# カクテル一覧 %>
 <h1 class="index-cocktail-h1">新規投稿カクテル</h1>
 
