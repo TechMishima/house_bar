@@ -21,6 +21,27 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    cocktail = Cocktail.find(params[:id])
+    if user_signed_in? && current_user.id == cocktail.user_id
+      cocktail.destroy
+      redirect_to root_path
+    end
+  end
+
+  def edit 
+    @cocktail = Cocktail.find(params[:id])
+  end
+
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktail_path(@cocktail.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def cocktail_params
