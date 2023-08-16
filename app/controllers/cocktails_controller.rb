@@ -42,6 +42,23 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def search
+    if params[:keyword] == nil
+      params[:keyword] = ""
+    end
+    if params[:alcohol_id] == nil
+      params[:alcohol_id] = "1"
+    end
+
+    if params[:keyword] != ""
+      @cocktails = Cocktail.search(params[:keyword]).order(created_at: :desc).limit(4)
+    elsif params[:alcohol_id] != "1"
+      @cocktails = Cocktail.where(alcohol_id: params[:alcohol_id]).order(created_at: :desc).limit(4)
+    else
+      redirect_to root_path, notice: "条件を設定してから検索してください"
+    end
+  end
+
   private
 
   def cocktail_params

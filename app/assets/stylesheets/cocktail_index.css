@@ -1,7 +1,7 @@
 .index-poster {
   width: 100vw;
   height: 40vh;
-  margin: 70px 0;
+  margin: 30px 0;
   position: relative;
 }
 
@@ -42,6 +42,14 @@
   margin-top: 5vh;
   font-size: 2vh;
   font-family: 'Kaisei Tokumin', serif;
+}
+
+.index-cocktail-h1 {
+  text-align: center;
+  margin: 30px 0px ;
+  font-weight: bold;
+  color: orange;
+  font-size: 34px;
 }
 
 .cocktail-index {
@@ -94,4 +102,142 @@
   position: fixed;
   border: 10px solid darkorange;
   object-fit: contain;
+}
+
+/* 検索部分 */
+.index-search-h1 {
+  text-align: center;
+  margin: 30px 0px ;
+  font-weight: bold;
+  color: orange;
+  font-size: 34px;
+}
+
+.flash-message {
+  text-align: center;
+  font-size: 40px;
+  color: red;
+}
+
+.index-search {
+  background-color: white;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-search-btn {
+  position: relative;
+  margin: 0px 100px;
+  cursor: pointer;
+}
+
+.search-before-img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.search-after-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* モーダルウィンドウ */
+.modal-overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.7;
+  display: none;
+}
+
+.modal-search1 {
+  z-index: 2;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  height: 30vh;
+  width: 30vw;
+  background-color: white;
+  border: 2px solid darkorange;
+  border-radius: 10px;
+  display: none;
+}
+
+.modal-h1 {
+  text-align: center;
+  margin: 3vh 0px ;
+  font-weight: bold;
+  color: orange;
+  font-size: min(3vh, 3vw);
+}
+
+.modal-search-base {
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.modal-search-base select {
+  width: 30%;
+  padding: 2px;
+  font-size: 18px;
+}
+
+.modal-send {
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.modal-send input[type="submit"] {
+  border-style: none;
+  width: 20%;
+  height: 4vh;
+  background: orange;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  font-size: min(1.8vh, 2vw);
+}
+
+.modal-send input[type="submit"]:hover {
+  cursor: pointer;
+  background: darkorange;
+}
+
+.modal-search2 {
+  z-index: 2;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  height: 30vh;
+  width: 30vw;
+  background-color: white;
+  border: 2px solid darkorange;
+  border-radius: 10px;
+  display: none;
+}
+
+.modal-search-soda {
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.modal-search-soda input {
+  width: 50%;
+  padding: 2px;
+  font-size: 18px;
 }

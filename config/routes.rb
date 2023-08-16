@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   root to: 'cocktails#index'
 
   resources :users, only: [:show]
-  resources :cocktails
+  resources :cocktails do
+    collection do
+      get 'search'
+    end
+  end
+
 end

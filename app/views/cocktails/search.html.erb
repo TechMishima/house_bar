@@ -1,0 +1,16 @@
+<h1 class="search-cocktail-h1">検索結果</h1>
+
+<div class="cocktail-search">
+<% @cocktails.each do |cocktail| %>
+  <div class="cocktail-search-box">
+    <%= link_to cocktail_path(cocktail.id) do %>
+    <div class="cocktail-search-name"><%= cocktail.name %></div>
+    <div class="cocktail-search-tab">
+      <div class="cocktail-search-alcohol">Base : <%= cocktail.alcohol.name %></div>
+      <div class="cocktail-search-type">Style : <%= cocktail.type.name %></div>
+    </div>
+    <%= image_tag cocktail.image, class: "cocktail-search-img" %>
+    <% end %>
+  </div>
+<% end %>
+</div>

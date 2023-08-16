@@ -22,7 +22,73 @@
   </div>
 </div>
 
+<%# 検索部分 %>
+<h1 class="index-search-h1">カクテルを探す</h1>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "flash-message #{name}" %>
+<% end %>
+
+<div class="index-search">
+  <div class="index-search-btn">
+    <%= image_tag "base-before.png", class: "search-before-img", id: "base-before-btn" %>
+    <%= image_tag "base-after.png", class: "search-after-img", id: "base-after-btn" %>
+  </div>
+
+  <div class="index-search-btn">
+    <%= image_tag "soda-before.png", class: "search-before-img", id: "soda-before-btn" %>
+    <%= image_tag "soda-after.png", class: "search-after-img", id: "soda-after-btn" %>
+  </div>
+
+  <div class="index-search-btn">
+    <%= link_to "#" do %>
+    <%= image_tag "follow-before.png", class: "search-before-img", id: "follow-before-btn" %>
+    <%= image_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
+    <% end %>
+  </div>
+
+  <div class="index-search-btn">
+    <%= link_to "#" do %>
+    <%= image_tag "favorite-before.png", class: "search-before-img", id: "favorite-before-btn" %>
+    <%= image_tag "favorite-after.png", class: "search-after-img", id: "favorite-after-btn" %>
+    <% end %>
+  </div>
+</div>
+
+<%# モーダルウィンドウ %>
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<div class="modal-search1" id="modal-search1">
+  <h1 class="modal-h1">ベースを選択してください</h1>
+  <div class="modal-base">
+    <%= form_with(url: search_cocktails_path, local: true, method: :get, class: "search-form") do |cocktail| %>
+      <div class="modal-search-base">
+        <%= cocktail.collection_select(:alcohol_id, Alcohol.all, :id, :name, {}) %>
+      </div>
+      <div class="modal-send">
+        <%= cocktail.submit "Search" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal-search2" id="modal-search2">
+  <h1 class="modal-h1">割り材料を入力してください</h1>
+  <div class="modal-soda">
+    <%= form_with(url: search_cocktails_path, local: true, method: :get, class: "search-form") do |cocktail| %>
+      <div class="modal-search-soda">
+        <%= cocktail.text_field :keyword %>
+      </div>
+      <div class="modal-send">
+        <%= cocktail.submit "Search" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <%# カクテル一覧 %>
+<h1 class="index-cocktail-h1">新規投稿カクテル</h1>
+
 <div class="cocktail-index">
 <% @cocktails.each do |cocktail| %>
   <div class="cocktail-index-box">

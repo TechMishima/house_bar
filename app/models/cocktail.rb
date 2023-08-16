@@ -9,4 +9,12 @@ extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :alcohol
   belongs_to :type
 
+  def self.search(search)
+    if search != ""
+      Cocktail.where('ingredient LIKE(?)', "%#{search}%")
+    else
+      Cocktail.all
+    end
+  end
+
 end
