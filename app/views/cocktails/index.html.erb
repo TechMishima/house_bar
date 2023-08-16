@@ -25,6 +25,10 @@
 <%# 検索部分 %>
 <h1 class="index-search-h1">カクテルを探す</h1>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "flash-message #{name}" %>
+<% end %>
+
 <div class="index-search">
   <div class="index-search-btn">
     <%= image_tag "base-before.png", class: "search-before-img", id: "base-before-btn" %>
