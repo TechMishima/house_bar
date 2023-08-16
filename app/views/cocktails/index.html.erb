@@ -73,7 +73,7 @@
   <div class="modal-soda">
     <%= form_with(url: search_cocktails_path, local: true, method: :get, class: "search-form") do |cocktail| %>
       <div class="modal-search-soda">
-        <%= cocktail.text_field :ingredient %>
+        <%= cocktail.text_field :keyword %>
       </div>
       <div class="modal-send">
         <%= cocktail.submit "Search" %>
