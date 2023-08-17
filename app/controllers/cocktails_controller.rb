@@ -6,6 +6,7 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @user = User.find(@cocktail.user.id)
   end
 
   def new
