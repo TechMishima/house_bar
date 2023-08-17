@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   root to: 'cocktails#index'
 
-  resources :users, only: [:show]
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+  end
+
+  resources :follows, only: [:index]
+
   resources :cocktails do
     collection do
       get 'search'

@@ -11,6 +11,10 @@
   <%= link_to 'ユーザー編集', edit_user_registration_path %>
 </div>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "flash-message #{name}" %>
+<% end %>
+
 <%# ポスター部分 %>
 <div class="index-poster">
   <%= image_tag "poster2.png", class: 'index-poster-img' %>
@@ -25,10 +29,6 @@
 <%# 検索部分 %>
 <h1 class="index-search-h1">カクテルを探す</h1>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: "flash-message #{name}" %>
-<% end %>
-
 <div class="index-search">
   <div class="index-search-btn">
     <%= image_tag "base-before.png", class: "search-before-img", id: "base-before-btn" %>
@@ -41,10 +41,18 @@
   </div>
 
   <div class="index-search-btn">
-    <%= link_to "#" do %>
+    <% if user_signed_in? %>
+    <%= form_tag follows_path, method: :get, class: "search-form" do %>
+    <%= hidden_field_tag :user_id, current_user.id %>
     <%= image_tag "follow-before.png", class: "search-before-img", id: "follow-before-btn" %>
-    <%= image_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
+    <%= image_submit_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
     <% end %>
+    <% else %>
+    <%= link_to new_user_session_path do %>
+    <%= image_tag "follow-before.png", class: "search-before-img", id: "follow-before-btn" %>
+    <%= image_submit_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
+    <% end %>
+  <% end %>
   </div>
 
   <div class="index-search-btn">

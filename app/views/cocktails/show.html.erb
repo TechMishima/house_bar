@@ -1,5 +1,5 @@
 <%# 編集ボタン、削除ボタン（登録ユーザーのみ） %>
-<% if current_user.id == @cocktail.user_id %>
+<% if user_signed_in? && (current_user.id == @cocktail.user_id) %>
 <div class="cocktail-show-btn">
   <div class="cocktail-show-edit-btn">
     <%= link_to "編集", edit_cocktail_path(@cocktail.id) %>
@@ -15,7 +15,22 @@
 
   <div class="cocktail-show-left">
     <div class="cocktail-show-name"><%= @cocktail.name %></div>
-    <div class="cocktail-show-user">by : <%= @cocktail.user.nickname %></div>
+    <div class="cocktail-show-user">by : <%= link_to @cocktail.user.nickname, user_path(@cocktail.user.id) %></div>
+    <div class="name">
+      <%# フォローボタン %>
+      <% if user_signed_in? && (current_user != @user) %>
+      <% if @user.followed_by?(current_user) %>
+      <div class="show-follow-btn1">
+        <%=link_to "フォロー中", user_relationships_path(@user.id), data: { turbo_method: :delete } %>
+      </div>
+      <% else %>
+      <div class="show-follow-btn2">
+        <%=link_to "フォローする", user_relationships_path(@user.id), data: { turbo_method: :post } %>
+      </div>
+      <% end %>
+      <% end %>
+      <%# フォローボタン終わり %>
+    </div>
     <div class="cocktail-show-img-box">
     <%= image_tag @cocktail.image, class: "cocktail-show-img" %>
     </div>

@@ -1,0 +1,13 @@
+<h1 class="index-follow-h1">フォローから検索</h1>
+
+<div class="follow-index">
+<% @users.each do |user| %>
+  <div class="follow-index-box">
+    <%= link_to user_path(user.id) do %>
+    <div class="follow-index-name"><%= user.nickname %> さん</div>
+    <%= image_tag user.image, class: "follow-index-img" %>
+    <div class="follow-index-bio"><%= user.bio %></div>
+    <% end %>
+  </div>
+<% end %>
+</div>

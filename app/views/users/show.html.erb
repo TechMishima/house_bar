@@ -5,7 +5,22 @@
   <div class="user-show-img-box">
   <%= image_tag @user.image, class: "user-show-img" %>
   </div>
+
   <div class="user-show-name">Nickname : <%= @user.nickname %></div>
+  <%# フォローボタン %>
+  <% if current_user != @user %>
+  <% if @user.followed_by?(current_user) %>
+  <div class="follow-btn1">
+    <%=link_to "フォロー中", user_relationships_path(@user.id), data: { turbo_method: :delete } %>
+  </div>
+  <% else %>
+  <div class="follow-btn2">
+    <%=link_to "フォローする", user_relationships_path(@user.id), data: { turbo_method: :post } %>
+  </div>
+  <% end %>
+  <% end %>
+  <%# フォローボタン終わり %>
+
   <h2 class="user-show-h2">自己紹介</h2>
   <div class="user-show-bio"><%= @user.bio %></div>
 </div>

@@ -58,7 +58,12 @@
   text-align: center;
 }
 
+.cocktail-show-user a {
+  color: orange;
+}
+
 .cocktail-show-img-box {
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -87,4 +92,39 @@
   color: orange;
   font-weight: bold;
   margin: 0px 50px;
+}
+
+.show-follow-btn1 {
+  line-height: 26px;
+  width: 120px;
+  background-color: lightcoral;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.show-follow-btn1 a {
+  color: white;
+  font-weight: bold;
+}
+
+.show-follow-btn2 {
+  line-height: 26px;
+  width: 120px;
+  background-color: lightblue;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.show-follow-btn2 a {
+  color: white;
+  font-weight: bold;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
 }

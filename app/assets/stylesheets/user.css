@@ -58,3 +58,33 @@
   height: 300px;
   width: 700px;
 }
+
+.follow-btn1 {
+  line-height: 26px;
+  width: 120px;
+  background-color: lightcoral;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.follow-btn1 a {
+  color: white;
+  font-weight: bold;
+}
+
+.follow-btn2 {
+  line-height: 26px;
+  width: 120px;
+  background-color: lightblue;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.follow-btn2 a {
+  color: white;
+  font-weight: bold;
+}
