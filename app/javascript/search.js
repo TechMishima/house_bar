@@ -60,3 +60,4 @@ function search() {
 }
 
 window.addEventListener('load', search)
+window.addEventListener('click', search)

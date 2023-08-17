@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: 'cocktails#index'
 
   resources :users do
-    resources :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create, :destroy]
   end
 
   resources :follows, only: [:index]

@@ -1,4 +1,6 @@
 class RelationshipsController < ApplicationController
+  before_action :move_to_index
+
   def create
     follow = current_user.active_relationships.new(follower_id: params[:user_id])
     follow.save
@@ -10,4 +12,12 @@ class RelationshipsController < ApplicationController
     follow.destroy
     redirect_to user_path(params[:user_id])
   end
+  
+  private
+  def move_to_index
+    unless user_signed_in?
+      redirect_to root_path
+    end
+  end
+
 end

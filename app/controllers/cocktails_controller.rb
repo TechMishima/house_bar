@@ -1,4 +1,5 @@
 class CocktailsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @cocktails = Cocktail.order(created_at: :desc).limit(4)
@@ -66,6 +67,12 @@ class CocktailsController < ApplicationController
     params.require(:cocktail)
     .permit(:name, :description, :alcohol_id, :type_id, :ingredient,:tool, :recipe, :image)
     .merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 
 end

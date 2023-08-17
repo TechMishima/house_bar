@@ -41,10 +41,17 @@
   </div>
 
   <div class="index-search-btn">
-  <%= form_tag follows_path, method: :get, class: "search-form" do %>
+    <% if user_signed_in? %>
+    <%= form_tag follows_path, method: :get, class: "search-form" do %>
     <%= hidden_field_tag :user_id, current_user.id %>
     <%= image_tag "follow-before.png", class: "search-before-img", id: "follow-before-btn" %>
     <%= image_submit_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
+    <% end %>
+    <% else %>
+    <%= link_to new_user_session_path do %>
+    <%= image_tag "follow-before.png", class: "search-before-img", id: "follow-before-btn" %>
+    <%= image_submit_tag "follow-after.png", class: "search-after-img", id: "follow-after-btn" %>
+    <% end %>
   <% end %>
   </div>
 
