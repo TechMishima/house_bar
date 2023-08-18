@@ -8,6 +8,7 @@ extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   belongs_to :alcohol
   belongs_to :type
+  has_many :likes
 
   def self.search(search)
     if search != ""
@@ -15,6 +16,10 @@ extend ActiveHash::Associations::ActiveRecordExtensions
     else
       Cocktail.all
     end
+  end
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
   end
 
 end

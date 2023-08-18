@@ -30,6 +30,11 @@
       <% end %>
       <% end %>
       <%# フォローボタン終わり %>
+
+        <div id="like-btn<%= @cocktail.id %>">
+          <%= render partial: "likes/like", locals: { cocktail: @cocktail } %>
+        </div>
+
     </div>
     <div class="cocktail-show-img-box">
     <%= image_tag @cocktail.image, class: "cocktail-show-img" %>
