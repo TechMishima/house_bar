@@ -3,7 +3,11 @@
 <div class="user-show">
 <div class="user-show-box">
   <div class="user-show-img-box">
+  <% if @user.image.attached? %>
   <%= image_tag @user.image, class: "user-show-img" %>
+  <% else %>
+  <%= image_tag "profile.png", class: "user-show-img" %>
+  <% end %>
   </div>
 
   <div class="user-show-name">Nickname : <%= @user.nickname %></div>
