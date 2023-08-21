@@ -31,9 +31,13 @@
       <% end %>
       <%# フォローボタン終わり %>
 
-        <div id="like-btn<%= @cocktail.id %>">
-          <%= render partial: "likes/like", locals: { cocktail: @cocktail } %>
-        </div>
+      <%# お気に入りボタン %>
+      <% if user_signed_in? %>
+      <div class="like-btn" id="like-btn" <%= @cocktail.id %> >
+        <%= render partial: "likes/like", locals: { cocktail: @cocktail } %>
+      </div>
+      <% end %>
+      <%# お気に入りボタン終わり %>
 
     </div>
     <div class="cocktail-show-img-box">
