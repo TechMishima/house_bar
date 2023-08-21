@@ -128,3 +128,19 @@
   display: flex;
   justify-content: center;
 }
+
+/* お気に入りボタン */
+.like-btn {
+  line-height: 26px;
+  width: 140px;
+  background-color: orange;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.like-btn a {
+  color: white;
+  font-weight: bold;
+}
