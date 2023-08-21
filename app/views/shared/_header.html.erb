@@ -6,6 +6,7 @@
       <% if user_signed_in? %>
         <%= image_tag current_user.image.variant(resize: '80x80'), class: 'header-user-img' if current_user.image.attached? %>
         <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
+        <li><%= link_to 'ユーザー編集', edit_user_registration_path, class: "logout" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'LogIn', new_user_session_path, class: "login" %></li>
