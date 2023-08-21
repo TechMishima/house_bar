@@ -1,6 +1,7 @@
 <div class="user-login">
   <div class="box-inner">
     <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
     <h1>ログイン</h1>
     <div class="login-email">
       <%= f.label :email, "Eメール" %><br />
