@@ -12,12 +12,12 @@ class RelationshipsController < ApplicationController
     follow.destroy
     redirect_to user_path(params[:user_id])
   end
-  
-  private
-  def move_to_index
-    unless user_signed_in?
-      redirect_to root_path
-    end
-  end
 
+  private
+
+  def move_to_index
+    return if user_signed_in?
+
+    redirect_to root_path
+  end
 end

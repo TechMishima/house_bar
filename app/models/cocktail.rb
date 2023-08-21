@@ -1,8 +1,8 @@
 class Cocktail < ApplicationRecord
-extend ActiveHash::Associations::ActiveRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions
   validates :name, presence: true
-  validates :alcohol_id, presence: true, numericality: { other_than: 1, message: "を入力してください" }
-  validates :type_id, presence: true, numericality: { other_than: 1, message: "を入力してください" }
+  validates :alcohol_id, presence: true, numericality: { other_than: 1, message: 'を入力してください' }
+  validates :type_id, presence: true, numericality: { other_than: 1, message: 'を入力してください' }
   has_one_attached :image
 
   belongs_to :user
@@ -11,7 +11,7 @@ extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :likes
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Cocktail.where('ingredient LIKE(?)', "%#{search}%")
     else
       Cocktail.all
@@ -21,5 +21,4 @@ extend ActiveHash::Associations::ActiveRecordExtensions
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
-
 end

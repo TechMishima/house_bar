@@ -3,10 +3,9 @@ class Type < ActiveHash::Base
     { id: 1, name: '---' },
     { id: 2, name: 'ロング' },
     { id: 3, name: 'ショート' },
-    { id: 4, name: 'その他' },
+    { id: 4, name: 'その他' }
   ]
- 
-   include ActiveHash::Associations
-   has_many :cocktails
- 
+
+  include ActiveHash::Associations
+  has_many :cocktails
 end

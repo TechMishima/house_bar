@@ -25,13 +25,13 @@ class CocktailsController < ApplicationController
 
   def destroy
     cocktail = Cocktail.find(params[:id])
-    if user_signed_in? && current_user.id == cocktail.user_id
-      cocktail.destroy
-      redirect_to root_path
-    end
+    return unless user_signed_in? && current_user.id == cocktail.user_id
+
+    cocktail.destroy
+    redirect_to root_path
   end
 
-  def edit 
+  def edit
     @cocktail = Cocktail.find(params[:id])
   end
 
@@ -45,24 +45,18 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    if params[:keyword] == nil
-      params[:keyword] = ""
-    end
-    if params[:alcohol_id] == nil
-      params[:alcohol_id] = "1"
-    end
-    if params[:user_id] == nil
-      params[:user_id] = ""
-    end
+    params[:keyword] = '' if params[:keyword].nil?
+    params[:alcohol_id] = '1' if params[:alcohol_id].nil?
+    params[:user_id] = '' if params[:user_id].nil?
 
-    if params[:keyword] != ""
+    if params[:keyword] != ''
       @cocktails = Cocktail.search(params[:keyword]).order(created_at: :desc).limit(4)
-    elsif params[:alcohol_id] != "1"
+    elsif params[:alcohol_id] != '1'
       @cocktails = Cocktail.where(alcohol_id: params[:alcohol_id]).order(created_at: :desc).limit(4)
-    elsif params[:user_id] != ""
-      @cocktails = Cocktail.joins(:likes).where(likes: { user_id: params[:user_id]}).order(created_at: :desc).limit(4)
+    elsif params[:user_id] != ''
+      @cocktails = Cocktail.joins(:likes).where(likes: { user_id: params[:user_id] }).order(created_at: :desc).limit(4)
     else
-      redirect_to root_path, notice: "条件を設定してから検索してください"
+      redirect_to root_path, notice: '条件を設定してから検索してください'
     end
   end
 
@@ -70,14 +64,13 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail)
-    .permit(:name, :description, :alcohol_id, :type_id, :ingredient,:tool, :recipe, :image)
-    .merge(user_id: current_user.id)
+          .permit(:name, :description, :alcohol_id, :type_id, :ingredient, :tool, :recipe, :image)
+          .merge(user_id: current_user.id)
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to root_path
-    end
-  end
+    return if user_signed_in?
 
+    redirect_to root_path
+  end
 end
