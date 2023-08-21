@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_052311) do
   create_table "cocktails", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
+    t.integer "alcohol_id", null: false
     t.integer "type_id", null: false
     t.text "ingredient"
     t.text "tool"
@@ -49,7 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_052311) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "alcohol_id"
     t.index ["user_id"], name: "index_cocktails_on_user_id"
   end
 
