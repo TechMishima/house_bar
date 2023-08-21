@@ -51,11 +51,16 @@ class CocktailsController < ApplicationController
     if params[:alcohol_id] == nil
       params[:alcohol_id] = "1"
     end
+    if params[:user_id] == nil
+      params[:user_id] = ""
+    end
 
     if params[:keyword] != ""
       @cocktails = Cocktail.search(params[:keyword]).order(created_at: :desc).limit(4)
     elsif params[:alcohol_id] != "1"
       @cocktails = Cocktail.where(alcohol_id: params[:alcohol_id]).order(created_at: :desc).limit(4)
+    elsif params[:user_id] != ""
+      @cocktails = Cocktail.joins(:likes).where(likes: { user_id: params[:user_id]}).order(created_at: :desc).limit(4)
     else
       redirect_to root_path, notice: "条件を設定してから検索してください"
     end
