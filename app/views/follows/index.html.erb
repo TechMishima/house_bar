@@ -5,7 +5,11 @@
   <div class="follow-index-box">
     <%= link_to user_path(user.id) do %>
     <div class="follow-index-name"><%= user.nickname %> さん</div>
+    <% if user.image.attached? %>
     <%= image_tag user.image, class: "follow-index-img" %>
+    <% else %>
+    <%= image_tag "profile.png", class: "follow-index-img" %>
+    <% end %>
     <div class="follow-index-bio"><%= user.bio %></div>
     <% end %>
   </div>
