@@ -188,6 +188,7 @@ belongs_to :following, class_name: "User"
 belongs_to :follower, class_name: "User"
 
 # 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/cd2a150eb27cf104b78ef58610ddad4f.png)](https://gyazo.com/cd2a150eb27cf104b78ef58610ddad4f)
 
 # 開発環境
 Ruby,RubyOnRails,JavaScript,CSS,HTML,MySQL,Render(PosgreSQL),AWS(S3)
