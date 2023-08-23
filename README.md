@@ -90,6 +90,7 @@ https://house-bar.onrender.com
 カクテルの創作はハードルが高いイメージがあるので、自分のオリジナルカクテルを作成して写真と共に投稿してもらう形式にする。
 
 # 洗い出した要件
+https://docs.google.com/spreadsheets/d/11KLA97ct0vF6mv6VujTC8dlLzeN5irrmR6PXrlFFohU/edit#gid=982722306
 
 # 実装した機能について(学習内容)
 - ActiveHashで検索
@@ -114,6 +115,8 @@ https://house-bar.onrender.com
 - カクテル表示の際に、スクロールバーを実装
 
 # データベース設計
+
+[![Image from Gyazo](https://i.gyazo.com/d9b5d30b83f9a0a7f208a3d3f0b186f4.png)](https://gyazo.com/d9b5d30b83f9a0a7f208a3d3f0b186f4)
 
 ## users テーブル
 
