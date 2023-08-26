@@ -1,10 +1,12 @@
 # アプリケーション名
-家bar (house_bar)
+### 家bar (house_bar) <br>
+[![Image from Gyazo](https://i.gyazo.com/6e0d070e0bba0f05fc713b2858999b03.png)](https://gyazo.com/6e0d070e0bba0f05fc713b2858999b03)
 
 # アプリケーション概要
 インスタグラム + カクテル
 - 自分で作成したカクテルを写真をつけて投稿できる
-- 投稿されているカクテルを検索できる
+- 投稿されているカクテルを検索できる <br>
+[![Image from Gyazo](https://i.gyazo.com/82316ff2899e392e4bba7c05b4856682.jpg)](https://gyazo.com/82316ff2899e392e4bba7c05b4856682)
 
 # URL
 https://house-bar.onrender.com
@@ -133,11 +135,11 @@ https://docs.google.com/spreadsheets/d/11KLA97ct0vF6mv6VujTC8dlLzeN5irrmR6PXrlFF
 - has_many :cocktails
 - has_many :Likes
 
-- follow
-has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
-has_many :followings, through: :active_relationships, source: :follower
-has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
-has_many :followers, through: :passive_relationships, source: :following
+- follow <br>
+has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id <br>
+has_many :followings, through: :active_relationships, source: :follower <br>
+has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id <br>
+has_many :followers, through: :passive_relationships, source: :following <br>
 
 ## cocktails テーブル
 
@@ -183,9 +185,9 @@ has_many :followers, through: :passive_relationships, source: :following
 
 ### Association
 
-- follow
-belongs_to :following, class_name: "User"
-belongs_to :follower, class_name: "User"
+- follow <br>
+belongs_to :following, class_name: "User" <br>
+belongs_to :follower, class_name: "User" <br>
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/cd2a150eb27cf104b78ef58610ddad4f.png)](https://gyazo.com/cd2a150eb27cf104b78ef58610ddad4f)
